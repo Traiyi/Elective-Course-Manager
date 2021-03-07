@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="93866452-f814-43d7-9b8b-96d4ae1fe80d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/artifacts/ssm_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/artifacts/ssm_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__com_alibaba_druid_1_0_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__com_alibaba_fastjson_1_2_73.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__com_auth0_java_jwt_3_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_0_pr3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_0_pr3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_0_pr3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_2_beta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__com_google_protobuf_protobuf_java_2_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__commons_codec_commons_codec_1_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__commons_io_commons_io_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__jstl_jstl_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__log4j_log4j_1_2_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__mysql_mysql_connector_java_8_0_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_mybatis_generator_mybatis_generator_core_1_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_mybatis_mybatis_3_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_springframework_spring_aop_4_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_springframework_spring_aspects_4_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_springframework_spring_beans_4_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_springframework_spring_context_4_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_springframework_spring_core_4_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_springframework_spring_expression_4_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_springframework_spring_jdbc_4_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_springframework_spring_test_4_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_springframework_spring_tx_4_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_springframework_spring_web_4_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/libraries/Maven__org_springframework_spring_webmvc_4_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../common/CommonResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../common/ErrorCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../common/ResultCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../controller/AdminStudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../controller/ElectiveController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../controller/ElectiveCourseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../controller/GradeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../controller/QuestionAnswerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../controller/SpecialtyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../controller/interceptor/TokenInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Elective.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ElectiveCourse.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ElectiveCourseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ElectiveMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Grade.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GradeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QuestionAnswer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QuestionAnswerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Specialty.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpecialtyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Student.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StudentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pojo/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pojo/Elective.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pojo/ElectiveCourse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pojo/Grade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pojo/QuestionAnswer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pojo/Specialty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pojo/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pojo/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/ElectiveCourseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/ElectiveService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/GradeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/QuestionAnswerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/SpecialtyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/impl/ElectiveCourseServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/impl/ElectiveServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/impl/GradeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/impl/QuestionAnswerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/impl/SpecialtyServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/impl/StudentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../util/BackModelToFrontModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../util/TokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../webapp/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../webapp/submit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../ssm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../../../../README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../../../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Users\Traiyi\AppData\Local\Programs\apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="C:\Users\Traiyi\AppData\Local\Programs\apache-maven-3.5.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ohbSrb8wW9aI733Tvn96K8QHXp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../../../../springboot_project" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="93866452-f814-43d7-9b8b-96d4ae1fe80d" name="Default Changelist" comment="" />
+      <created>1613741772812</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613741772812</updated>
+      <workItem from="1613741774362" duration="26000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

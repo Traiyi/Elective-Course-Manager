@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.how2java.mapper.GradeMapper">
+	<insert id="add" parameterType="Grade" >
+		insert into grade ( name ) values (#{name})
+	</insert>
+
+	<delete id="delete" parameterType="Grade" >
+		delete from grade where id= #{id}
+	</delete>
+
+	<select id="get" parameterType="_int" resultType="Grade">
+		select * from   grade  where id= #{id}
+	</select>
+
+	<update id="update" parameterType="Grade" >
+		update grade set name=#{name} where id=#{id}
+	</update>
+	<select id="list" resultType="Grade">
+		select * from   grade order by id
+		<if test="start!=null and count!=null">
+			limit #{start},#{count}
+		</if>
+
+	</select>
+	<select id="total" resultType="int">
+		select count(*) from   grade
+	</select>
+</mapper>
+

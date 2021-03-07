@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../../../../../../../../:\Documents\Program\My-Project\Project\Money-Project\Course-Manager\code\server\Course\src\main\java\com\how2java\mapper\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
