@@ -35,7 +35,6 @@ public class GradeController {
     @ResponseBody
     public CommonResult add(@RequestBody Grade grade) {
         System.out.println(grade);
-        gradeService.add(grade);
         CommonResult commonResult;
         int count = gradeService.add(grade);
         if (count == 1) {

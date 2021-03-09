@@ -30,7 +30,8 @@
         icon="el-icon-search"
         @click="handleFilter"
       >
-        搜索      </el-button>
+        搜索
+      </el-button>
 
       <el-button
         class="filter-item"
@@ -49,7 +50,8 @@
         icon="el-icon-download"
         @click="handleDownload"
       >
-        导出Excel      </el-button>
+        导出Excel
+      </el-button>
     </div>
 
     <el-table
@@ -104,7 +106,8 @@
             type="danger"
             @click="handleDelete(row, $index)"
           >
-            删除          </el-button>
+            删除
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -187,9 +190,7 @@ import {
   specialtyUpdate,
 } from "@/api/specialty";
 
-import {
-  gradeList,
-} from "@/api/grade";
+import { gradeList } from "@/api/grade";
 import waves from "@/directive/waves"; // waves directive
 import { parseTime } from "@/utils";
 import Pagination from "@/components/Pagination"; // secondary package based on el-pagination
@@ -322,14 +323,14 @@ export default {
       this.$refs["dataForm"].validate((valid) => {
         if (valid) {
           specialtyAdd(this.temp).then(() => {
-            this.list.unshift(this.temp);
             this.dialogFormVisible = false;
             this.$notify({
               title: "Success",
-              message: "Created Successfully",
+              message: "创建成功",
               type: "success",
               duration: 2000,
             });
+            this.getList();
           });
         }
       });
@@ -354,7 +355,7 @@ export default {
             this.dialogFormVisible = false;
             this.$notify({
               title: "Success",
-              message: "Update Successfully",
+              message: "更新成功",
               type: "success",
               duration: 2000,
             });
@@ -367,7 +368,7 @@ export default {
         this.list.splice(index, 1);
         this.$notify({
           title: "Success",
-          message: "Delete Successfully",
+          message: "删除成功",
           type: "success",
           duration: 2000,
         });

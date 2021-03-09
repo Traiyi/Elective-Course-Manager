@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.traiyi.mapper.ElectiveCourseMapper">
+    <resultMap type="com.traiyi.pojo.ElectiveCourse" id="electiveCourseBean">
+        <id column="id" property="id"/>
+        <result column="grade_id" property="gradeID"/>
+        <result column="specialty_id" property="specialtyID"/>
+        <result column="name" property="name"/>
+        <result column="credit" property="credit"/>
+        <result column="student_quantity" property="studentQuantity"/>
+        <association property="grade" javaType="com.traiyi.pojo.Grade">
+            <id column="gid" property="id"/>
+            <result column="gname" property="name"/>
+        </association>
+        <association property="specialty" javaType="com.traiyi.pojo.Specialty">
+            <id column="sid" property="id"/>
+            <result column="sname" property="name"/>
+            <result column="grade_id" property="gradeID"/>
+        </association>
+    </resultMap>
+
+    <select id="listElectiveCourseAll" resultMap="electiveCourseBean">
+        select e.*, s.id 'sid', g.id 'gid',g.name 'gname',s.id 'sid' ,s.name 'sname', s.grade_id 'grade_id'
+        from elective_course e
+                 left join specialty s on e.specialty_id = s.id
+                 left join grade g on e.grade_id = g.id
+    </select>
+
+
+    <insert id="add" parameterType="ElectiveCourse">
+        insert into elective_course (name)
+        values (#{name}, #{gradeID}, #{specialtyID}, #{credit}, #{studentQuantity})
+    </insert>
+
+    <delete id="delete" parameterType="ElectiveCourse">
+        delete
+        from elective_course
+        where id = #{id}
+    </delete>
+
+    <select id="get" parameterType="_int" resultType="ElectiveCourse">
+        select *
+        from elective_course
+        where id = #{id}
+    </select>
+
+    <update id="update" parameterType="ElectiveCourse">
+        update elective_course
+        set name=#{name}
+        where id = #{id}
+    </update>
+    <select id="list" resultType="ElectiveCourse">
+        select * from elective_course order by id
+        <if test="start!=null and count!=null">
+            limit #{start},#{count}
+        </if>
+
+    </select>
+    <select id="total" resultType="int">
+        select count(*)
+        from elective_course
+    </select>
+</mapper>
+

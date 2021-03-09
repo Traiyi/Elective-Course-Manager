@@ -274,15 +274,17 @@ export default {
     createData() {
       this.$refs["dataForm"].validate((valid) => {
         if (valid) {
+          console.log("add")
           gradeAdd(this.temp).then(() => {
-            this.list.unshift(this.temp);
+            // this.list.unshift(this.temp);
             this.dialogFormVisible = false;
             this.$notify({
               title: "Success",
-              message: "Created Successfully",
+              message: "创建成功",
               type: "success",
               duration: 2000,
             });
+            this.getList();
           });
         }
       });
@@ -307,7 +309,7 @@ export default {
             this.dialogFormVisible = false;
             this.$notify({
               title: "Success",
-              message: "Update Successfully",
+              message: "更新成功",
               type: "success",
               duration: 2000,
             });
@@ -320,7 +322,7 @@ export default {
         this.list.splice(index, 1);
         this.$notify({
           title: "Success",
-          message: "Delete Successfully",
+          message: "删除成功",
           type: "success",
           duration: 2000,
         });

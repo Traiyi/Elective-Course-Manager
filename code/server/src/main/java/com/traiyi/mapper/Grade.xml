@@ -20,7 +20,7 @@
 		update grade set name=#{name} where id=#{id}
 	</update>
 	<select id="list" resultType="Grade">
-		select * from   grade order by id
+		select * from  grade order by id
 		<if test="start!=null and count!=null">
 			limit #{start},#{count}
 		</if>
