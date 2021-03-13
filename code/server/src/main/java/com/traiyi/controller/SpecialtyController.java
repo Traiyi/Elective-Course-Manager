@@ -1,6 +1,8 @@
 package com.traiyi.controller;
 
 import com.traiyi.common.CommonResult;
+import com.traiyi.pojo.ListData;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.pojo.Specialty;
 import com.traiyi.service.SpecialtyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +25,10 @@ public class SpecialtyController {
     @Autowired
     SpecialtyService specialtyService;
 
-    @RequestMapping(value = "list", method = RequestMethod.GET)
+    @RequestMapping(value = "list", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<List<Specialty>> list() {
-        return CommonResult.success(specialtyService.list());
+    public CommonResult<ListData> list(SelectCondition selectCondition) {
+        return CommonResult.success(new ListData(specialtyService.list(),specialtyService.total()));
     }
 
     @RequestMapping(value = "list-all", method = RequestMethod.GET)

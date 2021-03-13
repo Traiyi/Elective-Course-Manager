@@ -1,6 +1,7 @@
 package com.traiyi.service;
 
 import com.traiyi.pojo.Admin;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.util.Page;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public interface AdminService {
 
     int total();
 
-    List<Admin> list(Page page);
+    List<Admin> list(SelectCondition selectCondition);
 
     void add(Admin c);
 

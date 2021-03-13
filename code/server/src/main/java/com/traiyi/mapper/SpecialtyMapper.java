@@ -1,5 +1,6 @@
 package com.traiyi.mapper;
 
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.pojo.Specialty;
 import com.traiyi.util.Page;
 
@@ -22,7 +23,7 @@ public interface SpecialtyMapper {
 
     public List<Specialty> list();
 
-    public List<Specialty> list(Page page);
+    public List<Specialty> list(SelectCondition selectCondition);
 
     public List<Specialty> listSpecialtyAll();
 

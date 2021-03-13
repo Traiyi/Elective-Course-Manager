@@ -1,10 +1,10 @@
 package com.traiyi.common;
 
 /**
- * @author £ºTraiyi
+ * @author ï¼šTraiyi
  * @Class : CommonResult
- * @description£ºTODO
- * @date £º2021-03-07 16:38
+ * @descriptionï¼šTODO
+ * @date ï¼š2021-03-07 16:38
  */
 
 public class CommonResult<T> {
@@ -22,8 +22,8 @@ public class CommonResult<T> {
     }
 
     /**
-     * @description: ³É¹¦·µ»Ø½á¹û
-     * @param data »ñÈ¡µÄÊı¾İ
+     * @description: æˆåŠŸè¿”å›ç»“æœ
+     * @param data è·å–çš„æ•°æ®
      * @return com.example.tiny1.common.CommonResult<T>
      */
     public static <T> CommonResult<T> success(T data){
@@ -32,9 +32,9 @@ public class CommonResult<T> {
     }
 
     /**
-     * @description: ³É¹¦·µ»Ø½á¹û
-     * @param data »ñÈ¡µÄÊı¾İ
-     * @param  message ÌáÊ¾ĞÅÏ¢
+     * @description: æˆåŠŸè¿”å›ç»“æœ
+     * @param data è·å–çš„æ•°æ®
+     * @param  message æç¤ºä¿¡æ¯
      * @return com.example.tiny1.common.CommonResult<T>
      */
     public static <T> CommonResult<T> success(T data,String message){
@@ -42,8 +42,8 @@ public class CommonResult<T> {
         return new CommonResult<T>(ResultCode.SUCCESS.getCode(),message,data);
     }
     /**
-     * @description: Ê§°Ü·µ»Ø½á¹û
-     * @param errorCode  ´íÎóÂë
+     * @description: å¤±è´¥è¿”å›ç»“æœ
+     * @param errorCode  é”™è¯¯ç 
      * @return com.example.tiny1.common.CommonResult<T>
      */
     public static <T> CommonResult<T> failed(ErrorCode errorCode){
@@ -52,44 +52,44 @@ public class CommonResult<T> {
     }
 
     /**
-     * Ê§°Ü·µ»Ø½á¹û
-     * @param message ÌáÊ¾ĞÅÏ¢
+     * å¤±è´¥è¿”å›ç»“æœ
+     * @param message æç¤ºä¿¡æ¯
      */
     public static <T> CommonResult<T> failed(String message) {
         return new CommonResult<T>(ResultCode.FAILED.getCode(), message, null);
     }
 
     /**
-     * Ê§°Ü·µ»Ø½á¹û
+     * å¤±è´¥è¿”å›ç»“æœ
      */
     public static <T> CommonResult<T> failed() {
         return failed(ResultCode.FAILED);
     }
 
     /**
-     * ²ÎÊıÑéÖ¤Ê§°Ü·µ»Ø½á¹û
+     * å‚æ•°éªŒè¯å¤±è´¥è¿”å›ç»“æœ
      */
     public static <T> CommonResult<T> validateFailed() {
         return failed(ResultCode.VALIDATE_FAILED);
     }
 
     /**
-     * ²ÎÊıÑéÖ¤Ê§°Ü·µ»Ø½á¹û
-     * @param message ÌáÊ¾ĞÅÏ¢
+     * å‚æ•°éªŒè¯å¤±è´¥è¿”å›ç»“æœ
+     * @param message æç¤ºä¿¡æ¯
      */
     public static <T> CommonResult<T> validateFailed(String message) {
         return new CommonResult<T>(ResultCode.VALIDATE_FAILED.getCode(), message, null);
     }
 
     /**
-     * Î´µÇÂ¼·µ»Ø½á¹û
+     * æœªç™»å½•è¿”å›ç»“æœ
      */
     public static <T> CommonResult<T> unauthorized(T data) {
         return new CommonResult<T>(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
     }
 
     /**
-     * Î´ÊÚÈ¨·µ»Ø½á¹û
+     * æœªæˆæƒè¿”å›ç»“æœ
      */
     public static <T> CommonResult<T> forbidden(T data) {
         return new CommonResult<T>(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);

@@ -1,10 +1,10 @@
 package com.traiyi.common;
 
 /**
- * @author £ºTraiyi
+ * @author ï¼šTraiyi
  * @Class : ErrorCode
- * @description£º·â×°APIµÄ´íÎóÂë
- * @date £º2021-03-07 16:37
+ * @descriptionï¼šå°è£…APIçš„é”™è¯¯ç 
+ * @date ï¼š2021-03-07 16:37
  */
 
 public interface ErrorCode {

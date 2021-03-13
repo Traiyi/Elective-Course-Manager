@@ -2,6 +2,7 @@ package com.traiyi.service.impl;
 
 import com.traiyi.mapper.QuestionAnswerMapper;
 import com.traiyi.pojo.QuestionAnswer;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.service.QuestionAnswerService;
 import com.traiyi.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +29,9 @@ public class QuestionAnswerServiceImpl implements QuestionAnswerService {
 
 
     @Override
-    public List<QuestionAnswer> list(Page page) {
+    public List<QuestionAnswer> list(SelectCondition selectCondition) {
         // TODO Auto-generated method stub
-        return questionAnswerMapper.list(page);
+        return questionAnswerMapper.list(selectCondition);
     }
 
 

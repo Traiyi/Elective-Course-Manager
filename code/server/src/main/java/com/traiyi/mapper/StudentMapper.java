@@ -1,5 +1,6 @@
 package com.traiyi.mapper;
 
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.pojo.Student;
 import com.traiyi.util.Page;
 
@@ -22,7 +23,7 @@ public interface StudentMapper {
 
     public List<Student> list();
 
-    public List<Student> list(Page page);
+    public List<Student> list(SelectCondition selectCondition);
 
     public List<Student> listStudentAll();
 

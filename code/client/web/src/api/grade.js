@@ -1,10 +1,11 @@
 import request from '@/utils/request'
 
-export function gradeList() {
+export function gradeList(data) {
+    console.log(data)
     return request({
         url: '/grade/list',
-        method: 'get',
-        // params: query
+        method: 'post',
+        data
     })
 }
 

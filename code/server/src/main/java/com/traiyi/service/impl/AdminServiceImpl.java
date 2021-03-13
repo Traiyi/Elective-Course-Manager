@@ -2,6 +2,7 @@ package com.traiyi.service.impl;
 
 import com.traiyi.mapper.AdminMapper;
 import com.traiyi.pojo.Admin;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.service.AdminService;
 import com.traiyi.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +32,9 @@ public class AdminServiceImpl implements AdminService {
 
 
     @Override
-    public List<Admin> list(Page page) {
+    public List<Admin> list(SelectCondition selectCondition) {
         // TODO Auto-generated method stub
-        return adminMapper.list(page);
+        return adminMapper.list(selectCondition);
     }
 
 

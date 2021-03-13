@@ -1,6 +1,7 @@
 package com.traiyi.service.impl;
 
 import com.traiyi.mapper.StudentMapper;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.pojo.Student;
 import com.traiyi.service.StudentService;
 import com.traiyi.util.Page;
@@ -21,9 +22,9 @@ public class StudentServiceImpl implements StudentService {
 
 
     @Override
-    public List<Student> list(Page page) {
+    public List<Student> list(SelectCondition selectCondition) {
         // TODO Auto-generated method stub
-        return studentMapper.list(page);
+        return studentMapper.list(selectCondition);
     }
 
 

@@ -1,5 +1,6 @@
 package com.traiyi.service;
 
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.pojo.Specialty;
 import com.traiyi.util.Page;
 
@@ -9,7 +10,7 @@ public interface SpecialtyService {
 
 	List<Specialty> list();
 	int total();
-	List<Specialty> list(Page page);
+	List<Specialty> list(SelectCondition selectCondition);
 	List<Specialty> listSpecialtyMoreAndOneGrade();
 	int add(Specialty c);
 	int update(Specialty c);

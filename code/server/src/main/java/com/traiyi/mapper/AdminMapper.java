@@ -1,6 +1,7 @@
 package com.traiyi.mapper;
 
 import com.traiyi.pojo.Admin;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.util.Page;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public interface AdminMapper {
 
     public List<Admin> list();
 
-    public List<Admin> list(Page page);
+    public List<Admin> list(SelectCondition selectCondition);
 
 
     public int total();

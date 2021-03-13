@@ -1,6 +1,7 @@
 package com.traiyi.service;
 
 import com.traiyi.pojo.QuestionAnswer;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.util.Page;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface QuestionAnswerService {
 
     int total();
 
-    List<QuestionAnswer> list(Page page);
+    List<QuestionAnswer> list(SelectCondition selectCondition);
 
     int add(QuestionAnswer c);
 

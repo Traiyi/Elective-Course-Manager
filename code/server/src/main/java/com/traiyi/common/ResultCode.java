@@ -1,19 +1,19 @@
 package com.traiyi.common;
 
 /**
- * @author £ºTraiyi
+ * @author ï¼šTraiyi
  * @Class : ResultCode
- * @description£ºÃ¶¾ÙÁËÒ»Ğ©³£ÓÃAPI²Ù×÷Âë
- * @date £º2021-03-07 16:35
+ * @descriptionï¼šæšä¸¾äº†ä¸€äº›å¸¸ç”¨APIæ“ä½œç 
+ * @date ï¼š2021-03-07 16:35
  */
 
 public enum ResultCode implements ErrorCode {
 
-    SUCCESS(200, "²Ù×÷³É¹¦"),
-    FAILED(500, "²Ù×÷Ê§°Ü"),
-    VALIDATE_FAILED(404, "²ÎÊı¼ìÑéÊ§°Ü"),
-    UNAUTHORIZED(401, "ÔİÎ´µÇÂ¼»òtokenÒÑ¾­¹ıÆÚ"),
-    FORBIDDEN(403, "Ã»ÓĞÏà¹ØÈ¨ÏŞ");
+    SUCCESS(200, "æ“ä½œæˆåŠŸ"),
+    FAILED(500, "æ“ä½œå¤±è´¥"),
+    VALIDATE_FAILED(404, "å‚æ•°æ£€éªŒå¤±è´¥"),
+    UNAUTHORIZED(401, "æš‚æœªç™»å½•æˆ–tokenå·²ç»è¿‡æœŸ"),
+    FORBIDDEN(403, "æ²¡æœ‰ç›¸å…³æƒé™");
 
     private long code;
     private String message;

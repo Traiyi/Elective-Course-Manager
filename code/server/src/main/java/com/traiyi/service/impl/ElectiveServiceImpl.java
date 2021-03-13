@@ -2,6 +2,7 @@ package com.traiyi.service.impl;
 
 import com.traiyi.mapper.ElectiveMapper;
 import com.traiyi.pojo.Elective;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.service.ElectiveService;
 import com.traiyi.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,9 @@ public class ElectiveServiceImpl implements ElectiveService {
 
 
     @Override
-    public List<Elective> list(Page page) {
+    public List<Elective> list(SelectCondition selectCondition) {
         // TODO Auto-generated method stub
-        return electiveMapper.list(page);
+        return electiveMapper.list(selectCondition);
     }
 
 

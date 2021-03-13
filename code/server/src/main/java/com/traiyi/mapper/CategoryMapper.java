@@ -3,6 +3,7 @@ package com.traiyi.mapper;
 import java.util.List;
 
 import com.traiyi.pojo.Category;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.util.Page;
 
 public interface CategoryMapper {
@@ -22,7 +23,7 @@ public interface CategoryMapper {
 
     public List<Category> list();
 
-    public List<Category> list(Page page);
+    public List<Category> list(SelectCondition selectCondition);
 
 
     public int total();

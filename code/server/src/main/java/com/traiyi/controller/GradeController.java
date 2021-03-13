@@ -2,6 +2,8 @@ package com.traiyi.controller;
 
 import com.traiyi.common.CommonResult;
 import com.traiyi.pojo.Grade;
+import com.traiyi.pojo.ListData;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.service.GradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,10 +26,14 @@ public class GradeController {
     GradeService gradeService;
 
 
-    @RequestMapping(value = "list", method = RequestMethod.GET)
+    @RequestMapping(value = "list", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<List<Grade>> list() {
-        return CommonResult.success(gradeService.list());
+    public CommonResult<ListData> list(@RequestBody SelectCondition selectCondition) {
+        System.out.println(selectCondition);
+//        selectCondition.setPage((selectCondition.getPage()-1)*selectCondition.getLimit());
+        selectCondition.caculateStart();
+        System.out.println(selectCondition);
+        return CommonResult.success(new ListData(gradeService.list(selectCondition),gradeService.total()));
     }
 
 

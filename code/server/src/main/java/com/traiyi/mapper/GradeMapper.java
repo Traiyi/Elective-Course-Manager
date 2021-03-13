@@ -1,6 +1,7 @@
 package com.traiyi.mapper;
 
 import com.traiyi.pojo.Grade;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.util.Page;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public interface GradeMapper {
 
     public List<Grade> list();
 
-    public List<Grade> list(Page page);
+    public List<Grade> list(SelectCondition selectCondition);
 
 
     public int total();

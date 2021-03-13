@@ -20,10 +20,30 @@
 		update grade set name=#{name} where id=#{id}
 	</update>
 	<select id="list" resultType="Grade">
-		select * from   grade order by id
-		<if test="start!=null and count!=null">
-			limit #{start},#{count}
+
+		select * from  grade
+
+		<if test="name!=null">
+			where name like concat('%',#{name},'%')
 		</if>
+
+		order by id
+
+		<choose>
+			<when test="sort=='asc'">
+<!--			<when test="sort=='asc'">-->
+				asc
+			</when>
+			<otherwise>
+				desc
+			</otherwise>
+		</choose>
+
+		<if test="page!=null and limit!=null">
+			limit #{page},#{limit}
+		</if>
+
+
 
 	</select>
 	<select id="total" resultType="int">

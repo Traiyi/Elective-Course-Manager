@@ -24,7 +24,7 @@ public class ElectiveCourseController {
     ElectiveCourseService electiveCourseService;
 
 
-    @RequestMapping(value = "list", method = RequestMethod.GET)
+    @RequestMapping(value = "list", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<List<ElectiveCourse>> list() {
         return CommonResult.success(electiveCourseService.list());

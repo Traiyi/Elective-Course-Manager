@@ -1,6 +1,7 @@
 package com.traiyi.mapper;
 
 import com.traiyi.pojo.Elective;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.util.Page;
 import org.apache.ibatis.annotations.Param;
 
@@ -19,7 +20,7 @@ public interface ElectiveMapper {
 
     public List<Elective> list();
 
-    public List<Elective> list(Page page);
+    public List<Elective> list(SelectCondition selectCondition);
 
     public int total();
 

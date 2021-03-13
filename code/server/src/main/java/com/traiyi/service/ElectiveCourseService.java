@@ -1,6 +1,7 @@
 package com.traiyi.service;
 
 import com.traiyi.pojo.ElectiveCourse;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.util.Page;
 
 import java.util.List;
@@ -9,7 +10,7 @@ public interface ElectiveCourseService {
 
 	List<ElectiveCourse> list();
 	int total();
-	List<ElectiveCourse> list(Page page);
+	List<ElectiveCourse> list(SelectCondition selectCondition);
 
 	 List<ElectiveCourse> listElectiveCourseAll();
 	int add(ElectiveCourse c);

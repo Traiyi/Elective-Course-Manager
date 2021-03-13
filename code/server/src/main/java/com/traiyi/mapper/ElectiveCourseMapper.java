@@ -1,6 +1,7 @@
 package com.traiyi.mapper;
 
 import com.traiyi.pojo.ElectiveCourse;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.util.Page;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public interface ElectiveCourseMapper {
 
     public List<ElectiveCourse> list();
 
-    public List<ElectiveCourse> list(Page page);
+    public List<ElectiveCourse> list(SelectCondition selectCondition);
 
     public List<ElectiveCourse> listElectiveCourseAll();
 

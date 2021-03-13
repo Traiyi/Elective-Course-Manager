@@ -1,6 +1,7 @@
 package com.traiyi.service;
 
 import com.traiyi.pojo.Elective;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.util.Page;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface ElectiveService {
 
     int total();
 
-    List<Elective> list(Page page);
+    List<Elective> list(SelectCondition selectCondition);
 
     int add(Elective c);
 

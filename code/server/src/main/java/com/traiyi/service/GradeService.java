@@ -1,6 +1,7 @@
 package com.traiyi.service;
 
 import com.traiyi.pojo.Grade;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.util.Page;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface GradeService {
 
     int total();
 
-    List<Grade> list(Page page);
+    List<Grade> list(SelectCondition selectCondition);
 
     int add(Grade c);
 

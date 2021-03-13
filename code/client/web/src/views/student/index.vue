@@ -3,7 +3,7 @@
     <div class="filter-container">
       <el-input
         v-model="listQuery.name"
-        placeholder="Title"
+        placeholder="请输入姓名"
         style="width: 200px"
         class="filter-item"
         @keyup.enter.native="handleFilter"
@@ -259,11 +259,11 @@ export default {
         page: 1,
         limit: 20,
         name: undefined,
-        sort: "+id",
+        sort: "asc",
       },
       sortOptions: [
-        { label: "ID Ascending", key: "+id" },
-        { label: "ID Descending", key: "-id" },
+        { label: "顺序查看", key: "asc" },
+        { label: "逆序查看", key: "desc" },
       ],
       temp: {
         id: undefined,
@@ -345,9 +345,9 @@ export default {
     },
     sortByID(order) {
       if (order === "ascending") {
-        this.listQuery.sort = "+id";
+        this.listQuery.sort = "asc";
       } else {
-        this.listQuery.sort = "-id";
+        this.listQuery.sort = "desc";
       }
       this.handleFilter();
     },

@@ -2,6 +2,7 @@ package com.traiyi.service.impl;
 
 import java.util.List;
 
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,9 +23,9 @@ public class CategoryServiceImpl implements CategoryService {
 
 
     @Override
-    public List<Category> list(Page page) {
+    public List<Category> list(SelectCondition selectCondition) {
         // TODO Auto-generated method stub
-        return categoryMapper.list(page);
+        return categoryMapper.list(selectCondition);
     }
 
 

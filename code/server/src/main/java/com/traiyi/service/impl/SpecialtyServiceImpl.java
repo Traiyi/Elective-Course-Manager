@@ -1,6 +1,7 @@
 package com.traiyi.service.impl;
 
 import com.traiyi.mapper.SpecialtyMapper;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.pojo.Specialty;
 import com.traiyi.service.SpecialtyService;
 import com.traiyi.util.Page;
@@ -21,9 +22,9 @@ public class SpecialtyServiceImpl implements SpecialtyService {
 
 
     @Override
-    public List<Specialty> list(Page page) {
+    public List<Specialty> list(SelectCondition selectCondition) {
         // TODO Auto-generated method stub
-        return specialtyMapper.list(page);
+        return specialtyMapper.list(selectCondition);
     }
 
 

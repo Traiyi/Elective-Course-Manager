@@ -2,6 +2,7 @@ package com.traiyi.service.impl;
 
 import com.traiyi.mapper.GradeMapper;
 import com.traiyi.pojo.Grade;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.service.GradeService;
 import com.traiyi.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,9 @@ public class GradeServiceImpl implements GradeService {
 
 
     @Override
-    public List<Grade> list(Page page) {
+    public List<Grade> list(SelectCondition selectCondition) {
         // TODO Auto-generated method stub
-        return gradeMapper.list(page);
+        return gradeMapper.list(selectCondition);
     }
 
 

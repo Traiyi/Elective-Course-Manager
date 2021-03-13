@@ -2,6 +2,7 @@ package com.traiyi.service.impl;
 
 import com.traiyi.mapper.ElectiveCourseMapper;
 import com.traiyi.pojo.ElectiveCourse;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.service.ElectiveCourseService;
 import com.traiyi.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,9 @@ public class ElectiveCourseServiceImpl implements ElectiveCourseService {
 
 
     @Override
-    public List<ElectiveCourse> list(Page page) {
+    public List<ElectiveCourse> list(SelectCondition selectCondition) {
         // TODO Auto-generated method stub
-        return electiveCourseMapper.list(page);
+        return electiveCourseMapper.list(selectCondition);
     }
 
     public List<ElectiveCourse> listElectiveCourseAll(){
