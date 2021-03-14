@@ -14,5 +14,4 @@ public interface StudentService {
 	int update(Student c);
 	int delete(int id);
 	Student get(int id);
-	List<Student> listStudentAll();
 }

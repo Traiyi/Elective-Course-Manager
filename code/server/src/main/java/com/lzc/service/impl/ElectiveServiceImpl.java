@@ -16,9 +16,10 @@ import java.util.List;
 public class ElectiveServiceImpl implements ElectiveService {
     @Autowired
     ElectiveMapper electiveMapper;
+    @Autowired
     ElectiveCourseMapper electiveCourseMapper;
-    Credit credit;
 
+    Credit credit;
     public List<Elective> list() {
         return electiveMapper.list();
     }
@@ -27,6 +28,11 @@ public class ElectiveServiceImpl implements ElectiveService {
     @Override
     public List<Elective> list(SelectCondition selectCondition) {
         // TODO Auto-generated method stub
+        List<Elective> electives = electiveMapper.list(selectCondition);
+        for (Elective e:electives
+             ) {
+            System.out.println(e);
+        }
         return electiveMapper.list(selectCondition);
     }
 
@@ -38,15 +44,33 @@ public class ElectiveServiceImpl implements ElectiveService {
 
     @Override
     public int add(Elective elective) {
+        System.out.println("impl "+elective);
         credit.isPass(elective);
+//        double studentCredit = elective.getStudentCredit();
+//        double electiveCourseCredit = electiveCourseMapper.get(elective.getCourseID()).getCredit();
+//        System.out.println(studentCredit+" "+electiveCourseCredit);
+//        if (studentCredit < electiveCourseCredit)
+//            elective.setIsPass(0);
+//        else
+//            elective.setIsPass(1);
+//
+        System.out.println("impl+isPass "+elective);
         return electiveMapper.add(elective);
     }
 
 
     @Override
-    public int update(Elective c) {
-        credit.isPass(c);
-        return electiveMapper.update(c);
+    public int update(Elective elective) {
+//        double studentCredit = elective.getStudentCredit();
+//        ElectiveCourse electiveCourse = electiveCourseMapper.get(elective.getCourseID());
+//        double electiveCourseCredit = electiveCourse.getCredit();
+//        System.out.println(studentCredit+" "+electiveCourseCredit);
+//        if (studentCredit < electiveCourseCredit)
+//            elective.setIsPass(0);
+//        else
+//            elective.setIsPass(1);
+        credit.isPass(elective);
+        return electiveMapper.update(elective);
     }
 
 

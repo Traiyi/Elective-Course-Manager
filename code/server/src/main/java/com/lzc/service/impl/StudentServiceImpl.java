@@ -16,6 +16,7 @@ public class StudentServiceImpl implements StudentService {
 
 
     public List<Student> list() {
+
         return studentMapper.list();
     }
 
@@ -23,6 +24,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> list(SelectCondition selectCondition) {
         // TODO Auto-generated method stub
+        System.out.println(selectCondition);
         return studentMapper.list(selectCondition);
     }
 
@@ -58,9 +60,5 @@ public class StudentServiceImpl implements StudentService {
         return studentMapper.get(id);
     }
 
-    public List<Student> listStudentAll() {
-
-        return studentMapper.listStudentAll();
-    }
 
 }

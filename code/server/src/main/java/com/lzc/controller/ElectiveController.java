@@ -28,7 +28,9 @@ public class ElectiveController {
 
     @RequestMapping(value = "list", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<ListData> list(SelectCondition selectCondition) {
+    public CommonResult<ListData> list(@RequestBody SelectCondition selectCondition) {
+        selectCondition.caculateStart();
+        System.out.println(selectCondition);
         return CommonResult.success(new ListData(electiveService.list(selectCondition), electiveService.total()));
     }
 
@@ -54,6 +56,7 @@ public class ElectiveController {
     @RequestMapping(value = "add", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody Elective elective) {
+        System.out.println(elective);
         CommonResult commonResult;
         int count = electiveService.add(elective);
         if (count == 1) {

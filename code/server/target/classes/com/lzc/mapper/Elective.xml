@@ -11,6 +11,7 @@
         <result column="course_id" property="courseID"/>
         <result column="name" property="name"/>
         <result column="student_credit" property="studentCredit"/>
+        <result column="is_pass" property="isPass"/>
         <association property="student" javaType="com.lzc.pojo.Student">
             <id column="sid" property="id"/>
             <result column="sname" property="name"/>
@@ -36,7 +37,7 @@
         left join elective_course ec on e.course_id = ec.id
         -- 搜索
         <if test="name!=null">
-            where name like concat('%',#{name},'%')
+            where e.name like concat('%',#{name},'%')
         </if>
         -- 排序
         order by e.id
@@ -56,8 +57,8 @@
     </select>
 
     <insert id="add" parameterType="Elective">
-        insert into elective (name,student_id,course_id,student_credit,is_pass)
-        values (#{name},#{studentID},#{courseID},#{studentCredit},#{isPass})
+        insert into elective (student_id, course_id, student_credit, is_pass)
+        values (#{studentID}, #{courseID}, #{studentCredit}, #{isPass})
     </insert>
 
     <delete id="delete" parameterType="Elective">
@@ -74,7 +75,10 @@
 
     <update id="update" parameterType="Elective">
         update elective
-        set name=#{name},student_id=#{studentID},course_id=#{courseID},student_credit=#{studentCredit},is_pass=#{isPass})
+        set student_id=#{studentID},
+            course_id=#{courseID},
+            student_credit=#{studentCredit},
+            is_pass=#{isPass}
         where id = #{id}
     </update>
 

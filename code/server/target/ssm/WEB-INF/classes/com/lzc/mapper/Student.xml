@@ -23,16 +23,34 @@
         </association>
     </resultMap>
 
-    <select id="listStudentAll" resultMap="studentBean">
-        select e.*, s.id 'sid', g.id 'gid',g.name 'gname',s.id 'sid' ,s.name 'sname'
-        from student e
-                 left join specialty s on e.specialty_id = s.id
-                 left join grade g on e.grade_id = g.id
+    <select id="list" resultMap="studentBean">
+        select st.*, s.id 'sid', g.id 'gid',g.name 'gname',s.id 'sid' ,s.name 'sname'
+        from student st
+                 left join specialty s on st.specialty_id = s.id
+                 left join grade g on st.grade_id = g.id
+        -- 		搜索
+        <if test="name!=null">
+            where st.name like concat('%',#{name},'%')
+        </if>
+        -- 		排序
+        order by st.id
+        <choose>
+            <when test="sort=='asc'">
+                asc
+            </when>
+            <otherwise>
+                desc
+            </otherwise>
+        </choose>
+        -- 		分页
+        <if test="limit!=0">
+            limit #{page},#{limit}
+        </if>
     </select>
 
     <insert id="add" parameterType="Student">
-        insert into student (name)
-        values (#{name})
+        insert into student (username,password,name,student_number,grade_id,specialty_id)
+        values (#{username},#{password},#{name},#{studentNumber},#{gradeID},#{specialtyID})
     </insert>
 
     <delete id="delete" parameterType="Student">
@@ -49,16 +67,10 @@
 
     <update id="update" parameterType="Student">
         update student
-        set name=#{name}
+        set username=#{username},password=#{password},name=#{name},student_number=#{studentNumber},grade_id=#{gradeID},specialty_id=#{specialtyID}
         where id = #{id}
     </update>
-    <select id="list" resultType="Student">
-        select * from student order by id
-        <if test="start!=null and count!=null">
-            limit #{start},#{count}
-        </if>
 
-    </select>
     <select id="total" resultType="int">
         select count(*)
         from student

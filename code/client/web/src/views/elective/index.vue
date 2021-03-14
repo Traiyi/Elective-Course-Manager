@@ -67,7 +67,6 @@
       <el-table-column
         label="选修编号"
         prop="id"
-        
         align="center"
         width="100"
         :class-name="getSortClass('id')"
@@ -125,7 +124,8 @@
             type="danger"
             @click="handleDelete(row, $index)"
           >
-            删除          </el-button>
+            删除
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -147,8 +147,38 @@
         label-width="70px"
         style="width: 400px; margin-left: 50px"
       >
-        <el-form-item label="选修名" prop="name">
-          <el-input v-model="temp.name" />
+        <el-form-item label="选修课" prop="electiveCourse.name">
+          <el-select
+            v-model="temp.courseID"
+            class="filter-item"
+            placeholder="选修课"
+          >
+            <el-option
+              v-for="item in listElectiveCourse"
+              :key="item.id"
+              :label="item.name"
+              :value="item.id"
+            />
+          </el-select>
+        </el-form-item>
+
+        <el-form-item label="学生" prop="student.name">
+          <el-select
+            v-model="temp.studentID"
+            class="filter-item"
+            placeholder="选修课"
+          >
+            <el-option
+              v-for="item in listStudent"
+              :key="item.id"
+              :label="item.name"
+              :value="item.id"
+            />
+          </el-select>
+        </el-form-item>
+
+        <el-form-item label="学生成绩" prop="studentCredit">
+          <el-input v-model="temp.studentCredit" />
         </el-form-item>
       </el-form>
 
@@ -191,6 +221,20 @@ import {
   electiveGet,
   electiveUpdate,
 } from "@/api/elective";
+import {
+  studentList,
+  studentAdd,
+  studentDelete,
+  studentGet,
+  studentUpdate,
+} from "@/api/student";
+import {
+  electiveCourseList,
+  electiveCourseAdd,
+  electiveCourseDelete,
+  electiveCourseGet,
+  electiveCourseUpdate,
+} from "@/api/elective-course";
 import waves from "@/directive/waves"; // waves directive
 import { parseTime } from "@/utils";
 import Pagination from "@/components/Pagination"; // secondary package based on el-pagination
@@ -204,8 +248,11 @@ export default {
     return {
       tableKey: 0,
       list: null,
+      listElectiveCourse: null,
+      listStudent: null,
       total: 0,
       listLoading: true,
+
       listQuery: {
         page: 1,
         limit: 10,
@@ -257,6 +304,35 @@ export default {
       electiveList(this.listQuery).then((response) => {
         this.list = response.data.list;
         this.total = response.data.total;
+        console.log("elective", this.list);
+        // Just to simulate the time of the request
+        setTimeout(() => {
+          this.listLoading = false;
+        }, 0.5 * 1000);
+      });
+      studentList({
+        page: undefined,
+        limit: undefined,
+        name: undefined,
+        sort: "asc",
+      }).then((response) => {
+        this.listStudent = response.data.list;
+        this.total = response.data.total;
+
+        console.log(this.list);
+        // Just to simulate the time of the request
+        setTimeout(() => {
+          this.listLoading = false;
+        }, 0.5 * 1000);
+      });
+      electiveCourseList({
+        page: undefined,
+        limit: undefined,
+        name: undefined,
+        sort: "asc",
+      }).then((response) => {
+        this.listElectiveCourse = response.data.list;
+        this.total = response.data.total;
 
         console.log(this.list);
         // Just to simulate the time of the request
@@ -266,8 +342,6 @@ export default {
       });
     },
     handleFilter() {
-
-      
       this.listQuery.page = 1;
       this.getList();
     },
@@ -312,6 +386,8 @@ export default {
               type: "success",
               duration: 2000,
             });
+
+            this.getList();
           });
         }
       });
@@ -340,6 +416,7 @@ export default {
               type: "success",
               duration: 2000,
             });
+            this.getList();
           });
         }
       });

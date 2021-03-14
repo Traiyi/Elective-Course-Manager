@@ -1,20 +1,15 @@
 import request from '@/utils/request'
 
-export function studentList() {
+export function studentList(data) {
+    console.log("studentListQuery",data)
     return request({
         url: '/student/list',
-        method: 'get',
-        // params: query
+        method: 'post',
+        data
     })
 }
 
-export function studentListAll() {
-    return request({
-        url: '/student/list-all',
-        method: 'get',
-        // params: query
-    })
-}
+
 
 export function studentAdd(data) {
     console.log(data)

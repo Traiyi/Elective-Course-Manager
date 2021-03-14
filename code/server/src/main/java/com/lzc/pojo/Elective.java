@@ -2,7 +2,6 @@ package com.lzc.pojo;
 
 public class Elective {
     private int id;
-    private String name;
     private int courseID;
     private int studentID;
     private double studentCredit;
@@ -18,13 +17,6 @@ public class Elective {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getCourseID() {
         return courseID;
@@ -78,7 +70,6 @@ public class Elective {
     public String toString() {
         return "Elective{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
                 ", courseID=" + courseID +
                 ", studentID=" + studentID +
                 ", studentCredit=" + studentCredit +

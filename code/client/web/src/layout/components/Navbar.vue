@@ -7,6 +7,9 @@
     />
 
     <breadcrumb class="breadcrumb-container" />
+    
+    
+    <!-- <div><h1 style="float:center" >管理系统</h1></div> -->
 
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
@@ -83,10 +86,14 @@ export default {
     float: left;
   }
 
+  .text {
+    float: center;
+  }
+
   .right-menu {
     float: right;
-    height: 100%;
-    line-height: 50px;
+    // height: 100%;
+    // line-height: 50px;
 
     &:focus {
       outline: none;

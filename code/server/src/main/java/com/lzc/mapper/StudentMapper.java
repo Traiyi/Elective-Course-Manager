@@ -24,10 +24,6 @@ public interface StudentMapper {
 
     public List<Student> list(SelectCondition selectCondition);
 
-    public List<Student> listStudentAll();
-
-
-
     public int total();
 
 }

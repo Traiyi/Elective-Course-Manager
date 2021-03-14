@@ -1,6 +1,8 @@
 package com.lzc.controller;
 
 import com.lzc.common.CommonResult;
+import com.lzc.pojo.ListData;
+import com.lzc.pojo.SelectCondition;
 import com.lzc.pojo.Student;
 import com.lzc.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +24,20 @@ public class AdminStudentController {
     @Autowired
     StudentService studentService;
 
+//
+//    @RequestMapping(value = "list-all", method = RequestMethod.GET)
+//    @ResponseBody
+//    public CommonResult<List<Student>> listAll() {
+//        return CommonResult.success(studentService.listStudentAll());
+//    }
 
-    @RequestMapping(value = "list-all", method = RequestMethod.GET)
+    @RequestMapping(value = "list", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<List<Student>> listAll() {
-        return CommonResult.success(studentService.listStudentAll());
-    }
-
-    @RequestMapping(value = "list", method = RequestMethod.GET)
-    @ResponseBody
-    public CommonResult<List<Student>> list() {
-        return CommonResult.success(studentService.list());
+    public CommonResult<ListData> list(@RequestBody SelectCondition selectCondition) {
+        System.out.println(selectCondition);
+        selectCondition.caculateStart();
+        System.out.println(selectCondition);
+        return CommonResult.success(new ListData(studentService.list(selectCondition),studentService.total()));
     }
 
 

@@ -230,7 +230,6 @@
 <script>
 import {
   studentList,
-  studentListAll,
   studentAdd,
   studentDelete,
   studentGet,
@@ -303,7 +302,7 @@ export default {
   methods: {
     getList() {
       this.listLoading = true;
-      studentListAll(this.listQuery).then((response) => {
+      studentList(this.listQuery).then((response) => {
         this.list = response.data.list;
         this.total = response.data.total;
 
@@ -313,8 +312,13 @@ export default {
           this.listLoading = false;
         }, 0.5 * 1000);
       });
-      gradeList(this.listQuery).then((response) => {
-        this.listGrade = response.data;
+      gradeList({
+        page: undefined,
+        limit: undefined,
+        name: undefined,
+        sort: "asc",
+      }).then((response) => {
+        this.listGrade = response.data.list;
 
         console.log(this.list);
         // Just to simulate the time of the request
@@ -322,8 +326,13 @@ export default {
           this.listLoading = false;
         }, 0.5 * 1000);
       });
-      specialtyList(this.listQuery).then((response) => {
-        this.listSpecialty = response.data;
+      specialtyList({
+        page: undefined,
+        limit: undefined,
+        name: undefined,
+        sort: "asc",
+      }).then((response) => {
+        this.listSpecialty = response.data.list;
 
         console.log(this.list);
         // Just to simulate the time of the request
@@ -378,6 +387,7 @@ export default {
               duration: 2000,
             });
           });
+          this.getList();
         }
       });
     },
@@ -396,8 +406,8 @@ export default {
           // const tempData = Object.assign({}, this.temp);
           // tempData.timestamp = +new Date(tempData.timestamp); // change Thu Nov 30 2017 16:41:05 GMT+0800 (CST) to 1512031311464
           studentUpdate(this.temp).then(() => {
-            const index = this.list.findIndex((v) => v.id === this.temp.id);
-            this.list.splice(index, 1, this.temp);
+            // const index = this.list.findIndex((v) => v.id === this.temp.id);
+            // this.list.splice(index, 1, this.temp);
             this.dialogFormVisible = false;
             this.$notify({
               title: "Success",
@@ -405,6 +415,8 @@ export default {
               type: "success",
               duration: 2000,
             });
+            
+          this.getList();
           });
         }
       });
