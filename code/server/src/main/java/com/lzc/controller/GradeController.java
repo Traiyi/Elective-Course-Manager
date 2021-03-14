@@ -28,6 +28,7 @@ public class GradeController {
     @ResponseBody
     public CommonResult<ListData> list(@RequestBody SelectCondition selectCondition) {
         selectCondition.caculateStart();
+        System.out.println(selectCondition);
         return CommonResult.success(new ListData(gradeService.list(selectCondition),gradeService.total()));
     }
 

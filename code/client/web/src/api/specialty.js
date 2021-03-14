@@ -1,8 +1,8 @@
 import request from '@/utils/request'
 
-export function specialtyListAll(data) {
+export function specialtyList(data) {
     return request({
-        url: '/specialty/list-all',
+        url: '/specialty/list',
         method: 'post',
         data
     })

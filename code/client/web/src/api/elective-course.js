@@ -1,21 +1,14 @@
 import request from '@/utils/request'
 
-export function electiveCourseList() {
+export function electiveCourseList(data) {
     return request({
         url: '/elective-course/list',
-        method: 'get',
-        // params: query
+        method: 'post',
+        data
     })
 }
 
 
-export function electiveCourseListAll() {
-    return request({
-        url: '/elective-course/list-all',
-        method: 'get',
-        // params: query
-    })
-}
 export function electiveCourseAdd(data) {
     console.log(data)
     return request({

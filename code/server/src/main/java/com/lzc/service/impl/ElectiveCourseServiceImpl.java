@@ -26,17 +26,6 @@ public class ElectiveCourseServiceImpl implements ElectiveCourseService {
         return electiveCourseMapper.list(selectCondition);
     }
 
-    public List<ElectiveCourse> listElectiveCourseAll(){
-        System.out.println(electiveCourseMapper.listElectiveCourseAll());
-        List<ElectiveCourse> electiveCourses =  electiveCourseMapper.listElectiveCourseAll();
-        for (ElectiveCourse e:electiveCourses
-             ) {
-            System.out.println(e);
-
-        }
-        return electiveCourseMapper.listElectiveCourseAll();
-    }
-
     @Override
     public int total() {
         return electiveCourseMapper.total();
@@ -45,20 +34,20 @@ public class ElectiveCourseServiceImpl implements ElectiveCourseService {
 
     @Override
     public int add(ElectiveCourse c) {
-         return  electiveCourseMapper.add(c);
+        return electiveCourseMapper.add(c);
 
     }
 
 
     @Override
     public int update(ElectiveCourse c) {
-        return   electiveCourseMapper.update(c);
+        return electiveCourseMapper.update(c);
     }
 
 
     @Override
     public int delete(int id) {
-        return  electiveCourseMapper.delete(id);
+        return electiveCourseMapper.delete(id);
     }
 
 
@@ -67,8 +56,6 @@ public class ElectiveCourseServiceImpl implements ElectiveCourseService {
         // TODO Auto-generated method stub
         return electiveCourseMapper.get(id);
     }
-
-    ;
 
 
 }

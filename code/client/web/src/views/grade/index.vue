@@ -65,10 +65,9 @@
       <el-table-column
         label="年级编号"
         prop="id"
-        sortable="custom"
+        
         align="center"
         width="100"
-        :class-name="getSortClass('id')"
       >
         <template slot-scope="{ row }">
           <span>{{ row.id }}</span>
@@ -181,7 +180,7 @@ export default {
       listLoading: true,
       listQuery: {
         page: 1,
-        limit: 10,
+        limit: 20,
         name: undefined,
         sort: "asc",
       },
@@ -354,10 +353,7 @@ export default {
         })
       );
     },
-    getSortClass: function (key) {
-      const sort = this.listQuery.sort;
-      return sort === `+${key}` ? "asc" : "desc";
-    },
+
   },
 };
 </script>

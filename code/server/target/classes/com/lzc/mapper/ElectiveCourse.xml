@@ -22,16 +22,35 @@
         </association>
     </resultMap>
 
-    <select id="listElectiveCourseAll" resultMap="electiveCourseBean">
+    <select id="list" resultMap="electiveCourseBean">
         select e.*, s.id 'sid', g.id 'gid',g.name 'gname',s.id 'sid' ,s.name 'sname', s.grade_id 'grade_id'
         from elective_course e
-                 left join specialty s on e.specialty_id = s.id
-                 left join grade g on e.grade_id = g.id
+        left join specialty s on e.specialty_id = s.id
+        left join grade g on e.grade_id = g.id
+        -- 搜索
+        <if test="name!=null">
+            where e.name like concat('%',#{name},'%')
+        </if>
+        -- 排序
+        order by id
+        <choose>
+            <when test="sort=='asc'">
+                asc
+            </when>
+            <otherwise>
+                desc
+            </otherwise>
+        </choose>
+        -- 分页
+        <if test="limit!=0">
+            limit #{page},#{limit}
+        </if>
+
     </select>
 
 
     <insert id="add" parameterType="ElectiveCourse">
-        insert into elective_course (name)
+        insert into elective_course (name, grade_id, specialty_id, credit, student_quantity)
         values (#{name}, #{gradeID}, #{specialtyID}, #{credit}, #{studentQuantity})
     </insert>
 
@@ -49,16 +68,20 @@
 
     <update id="update" parameterType="ElectiveCourse">
         update elective_course
-        set name=#{name}
+        set name=#{name},
+            grade_id=#{gradeID},
+            specialty_id=#{specialtyID},
+            credit=#{credit},
+            student_quantity=#{studentQuantity}
         where id = #{id}
     </update>
-    <select id="list" resultType="ElectiveCourse">
-        select * from elective_course order by id
-        <if test="start!=null and count!=null">
-            limit #{start},#{count}
-        </if>
+    <!--    <select id="list" resultType="ElectiveCourse">-->
+    <!--        select * from elective_course order by id-->
+    <!--        <if test="start!=null and count!=null">-->
+    <!--            limit #{start},#{count}-->
+    <!--        </if>-->
 
-    </select>
+    <!--    </select>-->
     <select id="total" resultType="int">
         select count(*)
         from elective_course

@@ -36,7 +36,7 @@
 			</otherwise>
 		</choose>
 -- 		分页
-		<if test="page!=0 and limit!=0">
+		<if test="limit!=0">
 			limit #{page},#{limit}
 		</if>
 	</select>

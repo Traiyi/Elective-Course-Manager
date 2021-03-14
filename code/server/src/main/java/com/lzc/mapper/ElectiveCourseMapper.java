@@ -24,7 +24,6 @@ public interface ElectiveCourseMapper {
 
     public List<ElectiveCourse> list(SelectCondition selectCondition);
 
-    public List<ElectiveCourse> listElectiveCourseAll();
 
 
     public int total();

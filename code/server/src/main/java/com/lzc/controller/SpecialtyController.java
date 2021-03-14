@@ -23,9 +23,9 @@ public class SpecialtyController {
     @Autowired
     SpecialtyService specialtyService;
 
-    @RequestMapping(value = "list-all", method = RequestMethod.POST)
+    @RequestMapping(value = "list", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<ListData> listAll(@RequestBody SelectCondition selectCondition) {
+    public CommonResult<ListData> list(@RequestBody SelectCondition selectCondition) {
         selectCondition.caculateStart();
         System.out.println(selectCondition);
         return CommonResult.success(new ListData(specialtyService.list(selectCondition),specialtyService.total()));

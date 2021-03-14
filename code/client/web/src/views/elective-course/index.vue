@@ -30,7 +30,8 @@
         icon="el-icon-search"
         @click="handleFilter"
       >
-        搜索      </el-button>
+        搜索
+      </el-button>
 
       <el-button
         class="filter-item"
@@ -49,7 +50,8 @@
         icon="el-icon-download"
         @click="handleDownload"
       >
-        导出Excel      </el-button>
+        导出Excel
+      </el-button>
     </div>
 
     <el-table
@@ -65,7 +67,6 @@
       <el-table-column
         label="选修课编号"
         prop="id"
-        sortable="custom"
         align="center"
         width="100"
         :class-name="getSortClass('id')"
@@ -122,7 +123,8 @@
             type="danger"
             @click="handleDelete(row, $index)"
           >
-            删除          </el-button>
+            删除
+          </el-button>
 
           <el-button type="info" size="mini" @click="handleInfo(row)">
             课程详情
@@ -224,7 +226,7 @@
 
 <script>
 import {
-  electiveCourseListAll,
+  electiveCourseList,
   electiveCourseAdd,
   electiveCourseDelete,
   electiveCourseGet,
@@ -310,9 +312,9 @@ export default {
   methods: {
     getList() {
       this.listLoading = true;
-      electiveCourseListAll(this.listQuery).then((response) => {
-        this.list = response.data;
-        this.total = response.data.length;
+      electiveCourseList(this.listQuery).then((response) => {
+        this.list = response.data.list;
+        this.total = response.data.total;
 
         console.log(this.list);
         // Just to simulate the time of the request
@@ -320,8 +322,13 @@ export default {
           this.listLoading = false;
         }, 0.5 * 1000);
       });
-      gradeList(this.listQuery).then((response) => {
-        this.listGrade = response.data;
+      gradeList({
+        page: undefined,
+        limit: undefined,
+        name: undefined,
+        sort: "asc",
+      }).then((response) => {
+        this.listGrade = response.data.list;
 
         console.log(this.list);
         // Just to simulate the time of the request
@@ -329,8 +336,13 @@ export default {
           this.listLoading = false;
         }, 0.5 * 1000);
       });
-      specialtyList(this.listQuery).then((response) => {
-        this.listSpecialty = response.data;
+      specialtyList({
+        page: undefined,
+        limit: undefined,
+        name: undefined,
+        sort: "asc",
+      }).then((response) => {
+        this.listSpecialty = response.data.list;
 
         console.log(this.list);
         // Just to simulate the time of the request
@@ -460,8 +472,22 @@ export default {
     handleDownload() {
       this.downloadLoading = true;
       import("@/vendor/Export2Excel").then((excel) => {
-        const tHeader = ["name"];
-        const filterVal = ["name"];
+        const tHeader = [
+          "选修课编号",
+          "年级名",
+          "专业名",
+          "选修课名",
+          "选修课学分",
+          "学生数量",
+        ];
+        const filterVal = [
+          "id",
+          "grade.name",
+          "specialty.name",
+          "name",
+          "credit",
+          "studentQuantity",
+        ];
         const data = this.formatJson(filterVal);
         excel.export_json_to_excel({
           header: tHeader,
@@ -474,8 +500,9 @@ export default {
     formatJson(filterVal) {
       return this.list.map((v) =>
         filterVal.map((j) => {
-          if (j === "timestamp") {
-            return parseTime(v[j]);
+          if (j.indexOf(".") != -1) {
+            var index = j.split(".");
+            return v[index[0]][index[1]];
           } else {
             return v[j];
           }

@@ -6,9 +6,9 @@ public class Elective {
     private int courseID;
     private int studentID;
     private double studentCredit;
+    private int isPass;
     private Student student;
     private ElectiveCourse electiveCourse;
-
 
     public int getId() {
         return id;
@@ -50,6 +50,14 @@ public class Elective {
         this.studentCredit = studentCredit;
     }
 
+    public int getIsPass() {
+        return isPass;
+    }
+
+    public void setIsPass(int isPass) {
+        this.isPass = isPass;
+    }
+
     public Student getStudent() {
         return student;
     }
@@ -74,6 +82,7 @@ public class Elective {
                 ", courseID=" + courseID +
                 ", studentID=" + studentID +
                 ", studentCredit=" + studentCredit +
+                ", isPass=" + isPass +
                 ", student=" + student +
                 ", electiveCourse=" + electiveCourse +
                 '}';

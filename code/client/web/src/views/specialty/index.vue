@@ -67,7 +67,7 @@
       <el-table-column
         label="专业编号"
         prop="id"
-        sortable="custom"
+        
         align="center"
         width="100"
         :class-name="getSortClass('id')"
@@ -183,7 +183,7 @@
 
 <script>
 import {
-  specialtyListAll,
+  specialtyList,
   specialtyAdd,
   specialtyDelete,
   specialtyGet,
@@ -260,7 +260,7 @@ export default {
   methods: {
     getList() {
       this.listLoading = true;
-      specialtyListAll(this.listQuery).then((response) => {
+      specialtyList(this.listQuery).then((response) => {
         this.list = response.data.list;
         this.total = response.data.total;
 
@@ -271,8 +271,8 @@ export default {
         }, 0.5 * 1000);
       });
       gradeList({
-        page: 0,
-        limit: 0,
+        page: undefined,
+        limit: undefined,
         name: undefined,
         sort: "asc",
       }).then((response) => {
@@ -389,8 +389,8 @@ export default {
     handleDownload() {
       this.downloadLoading = true;
       import("@/vendor/Export2Excel").then((excel) => {
-        const tHeader = ["name"];
-        const filterVal = ["name"];
+        const tHeader = ["专业编号", "年级名", "专业名"];
+        const filterVal = ["id", "name", "grade.name"];
         const data = this.formatJson(filterVal);
         excel.export_json_to_excel({
           header: tHeader,
@@ -403,8 +403,9 @@ export default {
     formatJson(filterVal) {
       return this.list.map((v) =>
         filterVal.map((j) => {
-          if (j === "timestamp") {
-            return parseTime(v[j]);
+          if (j.indexOf(".") != -1) {
+            var index = j.split(".");
+            return v[index[0]][index[1]];
           } else {
             return v[j];
           }

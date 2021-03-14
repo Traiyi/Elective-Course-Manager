@@ -1,10 +1,10 @@
 import request from '@/utils/request'
 
-export function electiveList() {
+export function electiveList(data) {
     return request({
         url: '/elective/list',
-        method: 'get',
-        // params: query
+        method: 'post',
+        data
     })
 }
 

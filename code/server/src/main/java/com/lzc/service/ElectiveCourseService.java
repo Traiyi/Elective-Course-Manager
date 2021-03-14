@@ -7,11 +7,9 @@ import java.util.List;
 
 public interface ElectiveCourseService {
 
-	List<ElectiveCourse> list();
 	int total();
+	List<ElectiveCourse> list();
 	List<ElectiveCourse> list(SelectCondition selectCondition);
-
-	 List<ElectiveCourse> listElectiveCourseAll();
 	int add(ElectiveCourse c);
 	int update(ElectiveCourse c);
 	int delete(int id);

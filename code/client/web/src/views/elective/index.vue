@@ -67,7 +67,7 @@
       <el-table-column
         label="选修编号"
         prop="id"
-        sortable="custom"
+        
         align="center"
         width="100"
         :class-name="getSortClass('id')"
@@ -255,8 +255,8 @@ export default {
     getList() {
       this.listLoading = true;
       electiveList(this.listQuery).then((response) => {
-        this.list = response.data;
-        this.total = response.data.length;
+        this.list = response.data.list;
+        this.total = response.data.total;
 
         console.log(this.list);
         // Just to simulate the time of the request
@@ -266,6 +266,8 @@ export default {
       });
     },
     handleFilter() {
+
+      
       this.listQuery.page = 1;
       this.getList();
     },

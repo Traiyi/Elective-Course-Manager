@@ -2,6 +2,8 @@ package com.lzc.controller;
 
 import com.lzc.common.CommonResult;
 import com.lzc.pojo.Elective;
+import com.lzc.pojo.ListData;
+import com.lzc.pojo.SelectCondition;
 import com.lzc.service.ElectiveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,10 +26,10 @@ public class ElectiveController {
     ElectiveService electiveService;
 
 
-    @RequestMapping(value = "list", method = RequestMethod.GET)
+    @RequestMapping(value = "list", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<List<Elective>> list() {
-        return CommonResult.success(electiveService.list());
+    public CommonResult<ListData> list(SelectCondition selectCondition) {
+        return CommonResult.success(new ListData(electiveService.list(selectCondition), electiveService.total()));
     }
 
 

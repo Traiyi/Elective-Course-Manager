@@ -1,9 +1,12 @@
 package com.lzc.service.impl;
 
+import com.lzc.mapper.ElectiveCourseMapper;
 import com.lzc.mapper.ElectiveMapper;
 import com.lzc.pojo.Elective;
+import com.lzc.pojo.ElectiveCourse;
 import com.lzc.pojo.SelectCondition;
 import com.lzc.service.ElectiveService;
+import com.lzc.util.Credit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +16,8 @@ import java.util.List;
 public class ElectiveServiceImpl implements ElectiveService {
     @Autowired
     ElectiveMapper electiveMapper;
-
+    ElectiveCourseMapper electiveCourseMapper;
+    Credit credit;
 
     public List<Elective> list() {
         return electiveMapper.list();
@@ -32,16 +36,16 @@ public class ElectiveServiceImpl implements ElectiveService {
         return electiveMapper.total();
     }
 
-
     @Override
-    public int add(Elective c) {
-        return electiveMapper.add(c);
-
+    public int add(Elective elective) {
+        credit.isPass(elective);
+        return electiveMapper.add(elective);
     }
 
 
     @Override
     public int update(Elective c) {
+        credit.isPass(c);
         return electiveMapper.update(c);
     }
 

@@ -2,6 +2,8 @@ package com.lzc.controller;
 
 import com.lzc.common.CommonResult;
 import com.lzc.pojo.ElectiveCourse;
+import com.lzc.pojo.ListData;
+import com.lzc.pojo.SelectCondition;
 import com.lzc.service.ElectiveCourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,25 +25,14 @@ public class ElectiveCourseController {
     @Autowired
     ElectiveCourseService electiveCourseService;
 
-
-    @RequestMapping(value = "list", method = RequestMethod.GET)
+    @RequestMapping(value = "list", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<List<ElectiveCourse>> list() {
-        return CommonResult.success(electiveCourseService.list());
+    public CommonResult<ListData> listAll(@RequestBody SelectCondition selectCondition) {
+
+        selectCondition.caculateStart();
+        System.out.println(selectCondition);
+        return CommonResult.success(new ListData(electiveCourseService.list(selectCondition),electiveCourseService.total()));
     }
-
-
-    @RequestMapping(value = "list-all", method = RequestMethod.GET)
-    @ResponseBody
-    public CommonResult<List<ElectiveCourse>> listAll() {
-        return CommonResult.success(electiveCourseService.listElectiveCourseAll());
-    }
-
-//    @RequestMapping(value = "list-all", method = RequestMethod.GET)
-//    @ResponseBody
-//    public CommonResult<ListData> listAll(@RequestBody SelectCondition selectCondition) {
-//        return CommonResult.success(new ListData(electiveCourseService.listElectiveCourseAll(),electiveCourseService.total()));
-//    }
 
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
