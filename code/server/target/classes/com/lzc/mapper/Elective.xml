@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lzc.mapper.ElectiveMapper">
+
+    <resultMap type="com.lzc.pojo.Elective" id="electiveBean">
+        <id column="id" property="id"/>
+        <result column="student_id" property="studentID"/>
+        <result column="course_id" property="courseID"/>
+        <result column="name" property="name"/>
+        <result column="student_credit" property="studentCredit"/>
+        <association property="student" javaType="com.lzc.pojo.Student">
+            <id column="sid" property="id"/>
+            <result column="sname" property="name"/>
+            <result column="student_number" property="studentNumber"/>
+        </association>
+        <association property="electiveCourse" javaType="com.lzc.pojo.ElectiveCourse">
+            <id column="ecid" property="id"/>
+            <result column="ecname" property="name"/>
+            <result column="credit" property="credit"/>
+        </association>
+    </resultMap>
+
+
+    <insert id="add" parameterType="Elective">
+        insert into elective (name)
+        values (#{name})
+    </insert>
+
+    <delete id="delete" parameterType="Elective">
+        delete
+        from elective
+        where id = #{id}
+    </delete>
+
+    <select id="get" parameterType="_int" resultType="Elective">
+        select *
+        from elective
+        where id = #{id}
+    </select>
+
+    <update id="update" parameterType="Elective">
+        update elective
+        set name=#{name}
+        where id = #{id}
+    </update>
+    <select id="list" resultMap="electiveBean">
+        select e.*,
+        s.id 'sid',
+        s.name 'sname',
+        s.student_number,
+        ec.id 'ecid',
+        ec.name 'ecname'
+        from elective e
+        left join student s on e.student_id = s.id
+        left join elective_course ec on e.course_id = ec.id
+        order by e.id
+        <if test="start!=null and count!=null">
+            limit #{start},#{count}
+        </if>
+
+    </select>
+    <select id="total" resultType="int">
+        select count(*)
+        from elective
+    </select>
+
+    <select id="totalElective" parameterType="_int" resultType="int">
+        select count(*)
+        from elective
+        where course_id = #{id}
+    </select>
+
+    <select id="listElectivePass" parameterType="_int" resultMap="electiveBean">
+        select e.*,
+               s.id 'sid',
+               s.name 'sname',
+               s.student_number,
+               ec.id 'ecid',
+               ec.name 'ecname'
+        from elective e
+                 left join student s on e.student_id = s.id
+                 left join elective_course ec on e.course_id = ec.id
+        where e.course_id = #{id}
+          and e.is_pass = 1
+        order by e.id
+    </select>
+
+    <select id="listElectiveNoPass" parameterType="_int" resultMap="electiveBean">
+        select e.*,
+               s.id 'sid',
+               s.name 'sname',
+               s.student_number,
+               ec.id 'ecid',
+               ec.name 'ecname'
+        from elective e
+                 left join student s on e.student_id = s.id
+                 left join elective_course ec on e.course_id = ec.id
+        where e.course_id = #{id}
+          and e.is_pass = 0
+        order by e.id
+    </select>
+
+    <select id="listStudent" resultMap="electiveBean">
+        select e.*,
+        s.id 'sid',
+        s.name 'sname',
+        s.student_number,
+        ec.id 'ecid',
+        ec.name 'ecname',
+        ec.credit 'credit'
+        from elective e
+        left join student s on e.student_id = s.id
+        left join elective_course ec on e.course_id = ec.id
+        where e.course_id = #{id}
+        <if test="name!=null">
+            and ec.name like concat('%', #{name}, '%')
+        </if>
+        order by e.id
+    </select>
+
+
+</mapper>
+

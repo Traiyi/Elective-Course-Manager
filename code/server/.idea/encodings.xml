@@ -4,9 +4,9 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/traiyi/common/CommonResult.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/traiyi/common/ErrorCode.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/traiyi/common/ResultCode.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lzc/common/CommonResult.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lzc/common/ErrorCode.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lzc/common/ResultCode.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/log4j.properties" charset="GBK" />

@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
     <context:annotation-config/>
-    <context:component-scan base-package="com.traiyi.controller">
+    <context:component-scan base-package="com.lzc.controller">
         <context:include-filter type="annotation"
                                 expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
@@ -20,7 +20,7 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean class="com.traiyi.controller.interceptor.TokenInterceptor"></bean>
+            <bean class="com.lzc.controller.interceptor.TokenInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

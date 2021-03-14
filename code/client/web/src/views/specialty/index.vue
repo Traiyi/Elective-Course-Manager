@@ -132,7 +132,7 @@
         <el-form-item label="年级名" prop="grade.name">
           <!-- <el-input v-model="temp.grade.name" /> -->
           <el-select
-            v-model="temp.grade.name"
+            v-model="temp.gradeID"
             class="filter-item"
             placeholder="年级名"
           >
@@ -209,7 +209,7 @@ export default {
       listLoading: true,
       listQuery: {
         page: 1,
-        limit: 20,
+        limit: 10,
         name: undefined,
         sort: "asc",
       },
@@ -355,9 +355,13 @@ export default {
         if (valid) {
           // const tempData = Object.assign({}, this.temp);
           // tempData.timestamp = +new Date(tempData.timestamp); // change Thu Nov 30 2017 16:41:05 GMT+0800 (CST) to 1512031311464
+
           specialtyUpdate(this.temp).then(() => {
-            const index = this.list.findIndex((v) => v.id === this.temp.id);
-            this.list.splice(index, 1, this.temp);
+            // const index = this.list.findIndex((v) => v.id === this.temp.id);
+            // console.log("index",index)
+
+            // console.log("this.temp",this.temp)
+            // this.list.splice(index, 1, this.temp);
             this.dialogFormVisible = false;
             this.$notify({
               title: "Success",
