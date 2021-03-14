@@ -8,18 +8,10 @@
 
     <breadcrumb class="breadcrumb-container" />
 
-
-  <div></div>
-
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <img
-            :src="img"
-            
-            
-            class="user-avatar"
-          />
+          <img :src="img" class="user-avatar" />
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
@@ -49,10 +41,10 @@ export default {
   computed: {
     ...mapGetters(["sidebar", "avatar"]),
   },
-  data(){
+  data() {
     return {
-      img:require('@/assets/shot/1.jpg')
-    }
+      img: require("@/assets/shot/1.jpg"),
+    };
   },
   methods: {
     toggleSideBar() {

@@ -67,7 +67,7 @@
         prop="id"
         sortable="custom"
         align="center"
-        width="80"
+        width="100"
         :class-name="getSortClass('id')"
       >
         <template slot-scope="{ row }">
@@ -250,7 +250,7 @@ export default {
       }
     },
     sortByID(order) {
-      if (order === "ascending") {
+      if (order === "asc") {
         this.listQuery.sort = "asc";
       } else {
         this.listQuery.sort = "desc";
@@ -354,7 +354,7 @@ export default {
     },
     getSortClass: function (key) {
       const sort = this.listQuery.sort;
-      return sort === `+${key}` ? "ascending" : "descending";
+      return sort === `+${key}` ? "asc" : "desc";
     },
   },
 };

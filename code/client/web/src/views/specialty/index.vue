@@ -3,7 +3,7 @@
     <div class="filter-container">
       <el-input
         v-model="listQuery.name"
-        placeholder="请输入姓名"
+        placeholder="请输入专业名"
         style="width: 200px"
         class="filter-item"
         @keyup.enter.native="handleFilter"
@@ -69,7 +69,7 @@
         prop="id"
         sortable="custom"
         align="center"
-        width="80"
+        width="100"
         :class-name="getSortClass('id')"
       >
         <template slot-scope="{ row }">
@@ -261,8 +261,8 @@ export default {
     getList() {
       this.listLoading = true;
       specialtyListAll(this.listQuery).then((response) => {
-        this.list = response.data;
-        this.total = response.data.length;
+        this.list = response.data.list;
+        this.total = response.data.total;
 
         console.log(this.list);
         // Just to simulate the time of the request
@@ -270,8 +270,14 @@ export default {
           this.listLoading = false;
         }, 0.5 * 1000);
       });
-      gradeList(this.listQuery).then((response) => {
-        this.listGrade = response.data;
+      gradeList({
+        page: 0,
+        limit: 0,
+        name: undefined,
+        sort: "asc",
+      }).then((response) => {
+        console.log(response.data);
+        this.listGrade = response.data.list;
         // this.totalG = response.data.length;
 
         console.log("grade", this.listGrade);
@@ -293,7 +299,7 @@ export default {
       }
     },
     sortByID(order) {
-      if (order === "ascending") {
+      if (order === "asc") {
         this.listQuery.sort = "asc";
       } else {
         this.listQuery.sort = "desc";
@@ -359,6 +365,7 @@ export default {
               type: "success",
               duration: 2000,
             });
+            this.getList();
           });
         }
       });
@@ -402,7 +409,7 @@ export default {
     },
     getSortClass: function (key) {
       const sort = this.listQuery.sort;
-      return sort === `+${key}` ? "ascending" : "descending";
+      return sort === `+${key}` ? "asc" : "desc";
     },
   },
 };

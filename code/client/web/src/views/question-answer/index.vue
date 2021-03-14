@@ -8,7 +8,7 @@
       highlight-current-row
       style="width: 100%"
     >
-      <el-table-column align="center" label="问题编号" width="80">
+      <el-table-column align="center" label="问题编号" width="100">
         <template slot-scope="{ row }">
           <span>{{ row.id }}</span>
         </template>
@@ -44,7 +44,7 @@
         </template>
       </el-table-column>
 
-      <el-table-column align="center" label="操作" width="120">
+      <el-table-column align="center" label="操作" width="100">
         <template slot-scope="{ row }">
           <el-button
             v-if="row.edit"

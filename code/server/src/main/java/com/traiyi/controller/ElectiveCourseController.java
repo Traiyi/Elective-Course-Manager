@@ -2,6 +2,8 @@ package com.traiyi.controller;
 
 import com.traiyi.common.CommonResult;
 import com.traiyi.pojo.ElectiveCourse;
+import com.traiyi.pojo.ListData;
+import com.traiyi.pojo.SelectCondition;
 import com.traiyi.service.ElectiveCourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +26,7 @@ public class ElectiveCourseController {
     ElectiveCourseService electiveCourseService;
 
 
-    @RequestMapping(value = "list", method = RequestMethod.POST)
+    @RequestMapping(value = "list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<ElectiveCourse>> list() {
         return CommonResult.success(electiveCourseService.list());
@@ -37,12 +39,16 @@ public class ElectiveCourseController {
         return CommonResult.success(electiveCourseService.listElectiveCourseAll());
     }
 
+//    @RequestMapping(value = "list-all", method = RequestMethod.GET)
+//    @ResponseBody
+//    public CommonResult<ListData> listAll(@RequestBody SelectCondition selectCondition) {
+//        return CommonResult.success(new ListData(electiveCourseService.listElectiveCourseAll(),electiveCourseService.total()));
+//    }
+
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody ElectiveCourse electiveCourse) {
-        System.out.println(electiveCourse);
-        electiveCourseService.add(electiveCourse);
         CommonResult commonResult;
         int count = electiveCourseService.add(electiveCourse);
         if (count == 1) {

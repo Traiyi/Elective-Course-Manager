@@ -25,23 +25,17 @@ public class SpecialtyController {
     @Autowired
     SpecialtyService specialtyService;
 
-    @RequestMapping(value = "list", method = RequestMethod.POST)
+    @RequestMapping(value = "list-all", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<ListData> list(SelectCondition selectCondition) {
-        return CommonResult.success(new ListData(specialtyService.list(),specialtyService.total()));
-    }
-
-    @RequestMapping(value = "list-all", method = RequestMethod.GET)
-    @ResponseBody
-    public CommonResult<List<Specialty>> listAll() {
-        return CommonResult.success(specialtyService.listSpecialtyMoreAndOneGrade());
+    public CommonResult<ListData> listAll(@RequestBody SelectCondition selectCondition) {
+        selectCondition.caculateStart();
+        System.out.println(selectCondition);
+        return CommonResult.success(new ListData(specialtyService.list(selectCondition),specialtyService.total()));
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody Specialty specialty) {
-        System.out.println(specialty);
-        specialtyService.add(specialty);
         CommonResult commonResult;
         int count = specialtyService.add(specialty);
         if (count == 1) {

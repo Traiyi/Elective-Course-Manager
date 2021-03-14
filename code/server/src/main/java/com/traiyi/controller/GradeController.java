@@ -29,10 +29,7 @@ public class GradeController {
     @RequestMapping(value = "list", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<ListData> list(@RequestBody SelectCondition selectCondition) {
-        System.out.println(selectCondition);
-//        selectCondition.setPage((selectCondition.getPage()-1)*selectCondition.getLimit());
         selectCondition.caculateStart();
-        System.out.println(selectCondition);
         return CommonResult.success(new ListData(gradeService.list(selectCondition),gradeService.total()));
     }
 

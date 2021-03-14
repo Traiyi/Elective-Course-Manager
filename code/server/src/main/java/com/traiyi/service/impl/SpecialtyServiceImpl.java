@@ -21,15 +21,10 @@ public class SpecialtyServiceImpl implements SpecialtyService {
     }
 
 
-    @Override
+
+
     public List<Specialty> list(SelectCondition selectCondition) {
-        // TODO Auto-generated method stub
-        return specialtyMapper.list(selectCondition);
-    }
-
-
-    public List<Specialty> listSpecialtyMoreAndOneGrade() {
-        List<Specialty> specialties = specialtyMapper.listSpecialtyAll();
+        List<Specialty> specialties = specialtyMapper.list(selectCondition);
         for (Specialty specialty : specialties
         ) {
             System.out.println("sssss");

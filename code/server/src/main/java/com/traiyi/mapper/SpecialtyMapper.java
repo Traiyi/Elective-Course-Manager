@@ -25,7 +25,7 @@ public interface SpecialtyMapper {
 
     public List<Specialty> list(SelectCondition selectCondition);
 
-    public List<Specialty> listSpecialtyAll();
+//    public List<Specialty> listSpecialtyAll();
 
     public int total();
 

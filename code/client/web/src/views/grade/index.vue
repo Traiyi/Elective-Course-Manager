@@ -3,7 +3,7 @@
     <div class="filter-container">
       <el-input
         v-model="listQuery.name"
-        placeholder="请输入姓名"
+        placeholder="请输入年级名"
         style="width: 200px"
         class="filter-item"
         @keyup.enter.native="handleFilter"
@@ -67,7 +67,7 @@
         prop="id"
         sortable="custom"
         align="center"
-        width="80"
+        width="100"
         :class-name="getSortClass('id')"
       >
         <template slot-scope="{ row }">
@@ -250,7 +250,7 @@ export default {
       }
     },
     sortByID(order) {
-      if (order === "ascending") {
+      if (order === "asc") {
         this.listQuery.sort = "asc";
       } else {
         this.listQuery.sort = "desc";
@@ -356,7 +356,7 @@ export default {
     },
     getSortClass: function (key) {
       const sort = this.listQuery.sort;
-      return sort === `+${key}` ? "ascending" : "descending";
+      return sort === `+${key}` ? "asc" : "desc";
     },
   },
 };

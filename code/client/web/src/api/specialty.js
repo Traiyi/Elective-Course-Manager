@@ -1,18 +1,10 @@
 import request from '@/utils/request'
 
-export function specialtyList() {
-    return request({
-        url: '/specialty/list',
-        method: 'get',
-        // params: query
-    })
-}
-
-export function specialtyListAll() {
+export function specialtyListAll(data) {
     return request({
         url: '/specialty/list-all',
-        method: 'get',
-        // params: query
+        method: 'post',
+        data
     })
 }
 

@@ -20,31 +20,25 @@
 		update grade set name=#{name} where id=#{id}
 	</update>
 	<select id="list" resultType="Grade">
-
 		select * from  grade
-
+-- 		搜索
 		<if test="name!=null">
 			where name like concat('%',#{name},'%')
 		</if>
-
+-- 		排序
 		order by id
-
 		<choose>
 			<when test="sort=='asc'">
-<!--			<when test="sort=='asc'">-->
-				asc
+				 asc
 			</when>
 			<otherwise>
 				desc
 			</otherwise>
 		</choose>
-
-		<if test="page!=null and limit!=null">
+-- 		分页
+		<if test="page!=0 and limit!=0">
 			limit #{page},#{limit}
 		</if>
-
-
-
 	</select>
 	<select id="total" resultType="int">
 		select count(*) from   grade

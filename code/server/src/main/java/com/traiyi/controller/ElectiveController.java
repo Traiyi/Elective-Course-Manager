@@ -52,8 +52,6 @@ public class ElectiveController {
     @RequestMapping(value = "add", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody Elective elective) {
-        System.out.println(elective);
-        electiveService.add(elective);
         CommonResult commonResult;
         int count = electiveService.add(elective);
         if (count == 1) {

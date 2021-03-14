@@ -34,8 +34,6 @@ public class QuestionAnswerController {
     @RequestMapping(value = "add", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody QuestionAnswer questionAnswer) {
-        System.out.println(questionAnswer);
-        questionAnswerService.add(questionAnswer);
         CommonResult commonResult;
         int count = questionAnswerService.add(questionAnswer);
         if (count == 1) {
