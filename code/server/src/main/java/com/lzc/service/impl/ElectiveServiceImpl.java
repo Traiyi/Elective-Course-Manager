@@ -20,6 +20,7 @@ public class ElectiveServiceImpl implements ElectiveService {
     ElectiveCourseMapper electiveCourseMapper;
 
     Credit credit;
+
     public List<Elective> list() {
         return electiveMapper.list();
     }

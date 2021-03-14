@@ -1,33 +1,42 @@
 <template>
   <div class="navbar">
-    <hamburger
-      :is-active="sidebar.opened"
-      class="hamburger-container"
-      @toggleClick="toggleSideBar"
-    />
+    <el-row type="flex" class="row-bg" justify="space-between">
+      <el-col :span="6"
+        ><hamburger
+          :is-active="sidebar.opened"
+          class="hamburger-container"
+          @toggleClick="toggleSideBar"
+        />
+        <breadcrumb class="breadcrumb-container" />
+      </el-col>
+      <el-col :span="6">
+        <div><img :src="img1" class="index-avater" /></div>
+      </el-col>
 
-    <breadcrumb class="breadcrumb-container" />
-    
-    
-    <!-- <div><h1 style="float:center" >管理系统</h1></div> -->
+      <el-col :span="6">
+        <div><h3>选修课管理系统</h3></div>
+      </el-col>
 
-    <div class="right-menu">
-      <el-dropdown class="avatar-container" trigger="click">
-        <div class="avatar-wrapper">
-          <img :src="img" class="user-avatar" />
-          <i class="el-icon-caret-bottom" />
+      <el-col :span="6">
+        <div class="right-menu">
+          <el-dropdown class="avatar-container" trigger="click">
+            <div class="avatar-wrapper">
+              <img :src="img2" class="user-avatar" />
+              <i class="el-icon-caret-bottom" />
+            </div>
+            <el-dropdown-menu slot="dropdown" class="user-dropdown">
+              <router-link to="/">
+                <el-dropdown-item> Home </el-dropdown-item>
+              </router-link>
+
+              <el-dropdown-item divided @click.native="logout">
+                <span style="display: block">Log Out</span>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
         </div>
-        <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <router-link to="/">
-            <el-dropdown-item> Home </el-dropdown-item>
-          </router-link>
-
-          <el-dropdown-item divided @click.native="logout">
-            <span style="display: block">Log Out</span>
-          </el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
-    </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -46,7 +55,8 @@ export default {
   },
   data() {
     return {
-      img: require("@/assets/shot/1.jpg"),
+      img1: require("@/assets/shot/1.jpg"),
+      img2: require("@/assets/shot/2.jpg"),
     };
   },
   methods: {
@@ -86,8 +96,10 @@ export default {
     float: left;
   }
 
-  .text {
-    float: center;
+  .index-avater {
+    float: top;
+    width: 200px;
+    height: 50px;
   }
 
   .right-menu {
@@ -95,49 +107,49 @@ export default {
     // height: 100%;
     // line-height: 50px;
 
-    &:focus {
-      outline: none;
-    }
+    // &:focus {
+    //   outline: none;
+    // }
 
-    .right-menu-item {
-      display: inline-block;
-      padding: 0 8px;
-      height: 100%;
-      font-size: 18px;
-      color: #5a5e66;
-      vertical-align: text-bottom;
+    // .right-menu-item {
+    //   display: inline-block;
+    //   padding: 0 8px;
+    //   height: 100%;
+    //   font-size: 18px;
+    //   color: #5a5e66;
+    //   vertical-align: text-bottom;
 
-      &.hover-effect {
-        cursor: pointer;
-        transition: background 0.3s;
+    //   &.hover-effect {
+    //     cursor: pointer;
+    //     transition: background 0.3s;
 
-        &:hover {
-          background: rgba(0, 0, 0, 0.025);
-        }
-      }
-    }
+    //     &:hover {
+    //       background: rgba(0, 0, 0, 0.025);
+    //     }
+    //   }
+    // }
 
     .avatar-container {
-      margin-right: 30px;
+      // margin-right: 30px;
 
       .avatar-wrapper {
-        margin-top: 5px;
-        position: relative;
+        // margin-top: 5px;
+        // position: relative;
 
         .user-avatar {
-          cursor: pointer;
+          // cursor: pointer;
           width: 40px;
           height: 40px;
-          border-radius: 10px;
+          // border-radius: 10px;
         }
 
-        .el-icon-caret-bottom {
-          cursor: pointer;
-          position: absolute;
-          right: -20px;
-          top: 25px;
-          font-size: 12px;
-        }
+        // .el-icon-caret-bottom {
+        //   cursor: pointer;
+        //   position: absolute;
+        //   right: -20px;
+        //   top: 25px;
+        //   font-size: 12px;
+        // }
       }
     }
   }
